@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 40px 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("img/seventeen-wallpaper.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  animation: fadeIn 2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.2em;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+#slideshow {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 260px; /* Adjusted width to match the image size */
+  margin: 20px auto;
+}
+
+.arrow-btn {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 2em;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#surpriseBtn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 25px;
+  background: #ff66b2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+#surpriseBtn:hover {
+  background: #ff1493;
+}
+
+#surprise {
+  margin-top: 30px;
+  display: none; /* Ensures it's initially hidden */
+  animation: fadeIn 1s ease-in-out;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+#surprise p {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+.surprise-img {
+  width: 220px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.surprise-img:hover {
+  transform: scale(1.05);
+}
+
+#musicBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 25px;
+  background: #ff66b2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+#musicBtn:hover {
+  background: #ff1493;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-active .nav-links {
+    display: flex;
+  }
+}
